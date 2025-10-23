@@ -18,7 +18,14 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:'Montserrat',system-ui,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden;animation:fadeIn 1.2s ease-in-out}
+    body{
+      font-family:'Montserrat',system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--fg);
+      line-height:1.6;
+      overflow-x:hidden;
+      animation:fadeIn 1.2s ease-in-out;
+    }
     @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 
     header{text-align:center;padding:50px 20px 20px;background:linear-gradient(180deg,#0d111a,#0a0d13)}
@@ -28,7 +35,7 @@
     p.slogan{color:var(--muted);margin-top:8px;font-size:1rem;font-weight:500}
     .cta{font-size:1.25rem;font-weight:600;margin-top:25px;color:var(--cyan)}
 
-    /* 🌈 Botón con borde neón multicolor */
+    /* 🌈 Botón con borde neón animado */
     .btn{
       display:inline-block;
       background:transparent;
@@ -39,7 +46,6 @@
       text-decoration:none;
       font-size:1.1rem;
       margin-top:20px;
-      position:relative;
       text-transform:uppercase;
       letter-spacing:1px;
       overflow:hidden;
@@ -57,18 +63,73 @@
     .btn:hover{transform:translateY(-2px);box-shadow:0 0 25px rgba(0,224,255,.6)}
 
     .phrases{margin-top:40px;font-size:1.05rem;font-weight:500;line-height:1.8;color:var(--cyan)}
+
     section{max-width:720px;margin:40px auto;padding:0 20px;text-align:center}
-    .info{background:#111726;border-radius:12px;padding:20px;border:1px solid #202637;color:var(--muted);font-size:.95rem}
-    iframe{width:100%;height:280px;border-radius:12px;border:1px solid #202637;margin:15px 0}
-    footer{border-top:1px solid #202637;padding:30px 10px;text-align:center;color:var(--muted);font-size:.9rem;margin-top:40px}
+    .info{
+      background:#111726;
+      border-radius:12px;
+      padding:20px;
+      border:1px solid #202637;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    /* 📍 Mapa con pin rojo y sin interacción */
+    .map-wrapper{
+      position:relative;
+      margin:15px 0;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid #202637;
+    }
+    .map-overlay{
+      position:absolute;
+      top:0;left:0;width:100%;height:100%;
+      z-index:2;
+      background:transparent;
+    }
+    iframe{
+      width:100%;
+      height:280px;
+      border:0;
+      pointer-events:none;
+    }
+    .pin{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-100%);
+      z-index:3;
+      font-size:2rem;
+      color:red;
+      filter:drop-shadow(0 0 4px rgba(255,0,0,.6));
+    }
+
+    footer{
+      border-top:1px solid #202637;
+      padding:30px 10px;
+      text-align:center;
+      color:var(--muted);
+      font-size:.9rem;
+      margin-top:40px;
+    }
     .social{margin-top:12px;display:flex;justify-content:center;gap:18px}
     .social a img{width:30px;height:30px;filter:drop-shadow(0 0 6px rgba(0,224,255,.4));transition:.2s}
     .social a:hover img{transform:scale(1.15)}
     .follow{margin-top:10px;font-size:1rem;color:var(--cyan);font-weight:600;letter-spacing:.5px}
-    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:999;background:#25d366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 15px rgba(0,0,0,.3);transition:.2s}
+    .wa-fab{
+      position:fixed;right:16px;bottom:16px;z-index:999;background:#25d366;
+      width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      box-shadow:0 6px 15px rgba(0,0,0,.3);transition:.2s;
+    }
     .wa-fab:hover{transform:scale(1.1)}
     .wa-fab img{width:34px;height:34px}
-    @media(max-width:480px){.btn{font-size:1rem;padding:14px 22px}.cta{font-size:1rem}iframe{height:240px}.phrases{font-size:.95rem}}
+    @media(max-width:480px){
+      .btn{font-size:1rem;padding:14px 22px}
+      .cta{font-size:1rem}
+      iframe{height:240px}
+      .phrases{font-size:.95rem}
+    }
   </style>
 </head>
 
@@ -78,19 +139,30 @@
     <h1>Barber Shop Rodri™</h1>
     <p class="slogan">Cortes con estilo, actitud de barrio 💈</p>
     <p class="cta">🔥 ¡Viví la experiencia Barber Shop Rodri!</p>
-    <a class="btn" href="https://wa.me/5491126230954?text=Hola%20Rodri%2C%20quisiera%20saber%20si%20ten%C3%A9s%20turnos%20disponibles%20%F0%9F%91%8B" target="_blank">💬 Agendá tu turno</a>
+
+    <a class="btn" href="https://wa.me/5491126230954?text=Hola%20Rodri%2C%20quisiera%20saber%20si%20ten%C3%A9s%20turnos%20disponibles%20%F0%9F%91%8B" target="_blank">
+      💬 Agendá tu turno
+    </a>
 
     <div class="phrases">
       <p>💈 “Donde el corte no es solo un look, es tu identidad.”</p>
-      <p>🔥 “Fade limpio, estilo suelto y la actitud en alto.”</p>
-      <p>🎯 “Porque el flow no se compra, se corta.”</p>
     </div>
   </header>
 
   <section>
     <div class="info">
-      <p><strong>📍 Dirección:</strong> <a href="https://maps.app.goo.gl/ju4nVzSWGteCUrdA9?g_st=ac" target="_blank" style="color:var(--cyan);text-decoration:none;">Canal de Panamá 3574, José C. Paz</a></p>
-      <iframe src="https://maps.google.com/maps?q=Canal%20de%20Panam%C3%A1%203574%2C%20Jos%C3%A9%20C.%20Paz&output=embed"></iframe>
+      <p><strong>📍 Dirección:</strong>
+        <a href="https://maps.app.goo.gl/ju4nVzSWGteCUrdA9?g_st=ac" target="_blank" style="color:var(--cyan);text-decoration:none;">
+          C. Goleta Sarandí 3375, José C. Paz
+        </a>
+      </p>
+
+      <div class="map-wrapper">
+        <a class="map-overlay" href="https://maps.app.goo.gl/ju4nVzSWGteCUrdA9?g_st=ac" target="_blank"></a>
+        <iframe src="https://www.google.com/maps?q=C.%20Goleta%20Sarand%C3%AD%203375%2C%20Jos%C3%A9%20C.%20Paz&output=embed" title="Mapa Barber Shop Rodri™"></iframe>
+        <div class="pin">📍</div>
+      </div>
+
       <p><strong>🕙 Horarios:</strong> Lunes a Sábado — 10:00 a 20:00 hs</p>
       <p><strong>📞 WhatsApp:</strong> +54 9 11 2623-0954</p>
     </div>
