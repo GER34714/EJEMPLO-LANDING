@@ -7,6 +7,9 @@
   <meta name="description" content="Barber Shop RODRI™ — Barbería moderna de José C. Paz. Cortes con flow, buena vibra y atención de primera. Agendá tu turno por WhatsApp 💈">
   <link rel="icon" href="/favicon.ico" />
 
+  <!-- ✅ TIPOGRAFÍAS -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
   <!-- ✅ OPEN GRAPH -->
   <meta property="og:title" content="Barber Shop RODRI™ — Estilo y Precisión 💈" />
   <meta property="og:description" content="Cortes con flow, actitud de barrio y la mejor atención. Agendá tu turno ahora 👇" />
@@ -29,10 +32,11 @@
       --neon2: #00e0ff;
       --neon3: #f5c95a;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Poppins', system-ui, sans-serif;
+      font-family: 'Montserrat', system-ui, sans-serif;
       background: var(--bg);
       color: var(--fg);
       line-height: 1.6;
@@ -62,10 +66,11 @@
     header img:hover { transform: scale(1.03); }
 
     h1 {
-      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
       color: var(--accent);
-      margin-top: 16px;
-      letter-spacing: 1px;
+      margin-top: 18px;
+      letter-spacing: 2px;
       font-weight: 800;
       text-shadow: 0 0 8px var(--neon1), 0 0 12px var(--neon2), 0 0 18px var(--neon3);
       animation: neonPulse 3s infinite alternate ease-in-out;
@@ -76,8 +81,8 @@
       50% { color: #fff8dc; text-shadow: 0 0 10px var(--neon3),0 0 20px var(--neon1),0 0 30px var(--neon2); }
     }
 
-    p.slogan { color: var(--muted); margin-top: 6px; font-size: 1rem; }
-    .cta { font-size: 1.2rem; color: var(--accent); margin-top: 25px; font-weight: 600; text-shadow: 0 0 8px rgba(245,201,90,0.3); }
+    p.slogan { color: var(--muted); margin-top: 6px; font-size: 1rem; font-weight: 500; }
+    .cta { font-size: 1.25rem; color: var(--accent); margin-top: 25px; font-weight: 600; text-shadow: 0 0 8px rgba(245,201,90,0.3); }
 
     .btn {
       display: inline-block;
@@ -91,6 +96,8 @@
       margin-top: 20px;
       transition: transform .15s ease, box-shadow .15s ease;
       box-shadow: 0 0 15px rgba(245,201,90,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 0 25px rgba(245,201,90,0.6); }
 
@@ -132,7 +139,7 @@
       padding: 30px 10px;
       text-align: center;
       color: var(--muted);
-      font-size: .85rem;
+      font-size: .9rem;
       margin-top: 40px;
     }
 
@@ -195,13 +202,14 @@
     <p class="slogan">Cortes con estilo, actitud de barrio 💈</p>
     <p class="cta">🔥 ¡Viví la experiencia Barber Shop Rodri!</p>
     <a class="btn" href="https://wa.me/5491126230954?text=Hola%20Rodri%2C%20quisiera%20saber%20si%20ten%C3%A9s%20turnos%20disponibles%20%F0%9F%91%8B" target="_blank" rel="noopener">
-      💬 AGENDÁ TU TURNO
+      💬 Agendá tu turno
     </a>
 
     <div class="phrases">
       <p>💈 “Donde el corte no es solo un look, es tu identidad.”</p>
-
-   </div>
+      <p>🔥 “Fade limpio, estilo suelto y la actitud en alto.”</p>
+      <p>🎯 “Porque el flow no se compra, se corta.”</p>
+    </div>
   </header>
 
   <section>
