@@ -7,8 +7,15 @@
   <meta name="description" content="Barber Shop RODRI™ — Barbería moderna de José C. Paz. Cortes con flow, buena vibra y atención de primera. Agendá tu turno por WhatsApp 💈">
   <link rel="icon" href="/favicon.ico" />
 
-  <!-- ✅ TIPOGRAFÍAS -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- ✅ Fuente Chomsky -->
+  <style>
+    @font-face {
+      font-family: 'Chomsky';
+      src: url('Chomsky.otf') format('opentype'); /* Si la pusiste en /fonts/, cambiá por url('fonts/Chomsky.otf') */
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
 
   <!-- ✅ OPEN GRAPH -->
   <meta property="og:title" content="Barber Shop RODRI™ — Estilo y Precisión 💈" />
@@ -66,12 +73,12 @@
     header img:hover { transform: scale(1.03); }
 
     h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-family: 'Chomsky', serif;
+      font-size: clamp(2rem, 6vw, 3.4rem);
       color: var(--accent);
       margin-top: 18px;
-      letter-spacing: 2px;
-      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       text-shadow: 0 0 8px var(--neon1), 0 0 12px var(--neon2), 0 0 18px var(--neon3);
       animation: neonPulse 3s infinite alternate ease-in-out;
     }
@@ -167,7 +174,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* WhatsApp FAB */
     .wa-fab {
       position: fixed;
       right: 16px;
@@ -237,7 +243,6 @@
     <p style="margin-top:20px;">© <span id="year"></span> Barber Shop RODRI™ — Todos los derechos reservados.</p>
   </footer>
 
-  <!-- FAB WhatsApp -->
   <a class="wa-fab" href="https://wa.me/5491126230954?text=Hola%20Rodri%2C%20quisiera%20saber%20si%20ten%C3%A9s%20turnos%20disponibles%20%F0%9F%91%8B" target="_blank" rel="noopener">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
